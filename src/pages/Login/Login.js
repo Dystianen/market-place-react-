@@ -7,7 +7,7 @@ import {useHistory} from "react-router-dom";
 
 export const Login = observer(() => {
     const store = useStore();
-    const [loading, setLoading] = useState(false);
+    const [loading] = useState(false);
 
     let history = useHistory();
 
@@ -100,7 +100,7 @@ export const Login = observer(() => {
                                 size={'small'}
                                 rules={[{required: false, message: 'Please input your Password!'}]}
                             >
-                                <a className="login-form-forgot" href="">
+                                <a className="login-form-forgot" href="/app/home">
                                     Forgot password
                                 </a>
                             </Form.Item>

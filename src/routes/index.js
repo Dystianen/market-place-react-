@@ -1,9 +1,9 @@
 
-import { AnimatedSwitch } from "react-router-transition";
+// import { AnimatedSwitch } from "react-router-transition";
 import {Redirect, Route, Switch} from "react-router-dom";
 import {Login} from "../pages/Login/Login";
 import {PublicRoute} from "../component/PublicRoute";
-import {PrivateRoute} from "../component/PrivateRoute";
+// import {PrivateRoute} from "../component/PrivateRoute";
 import {App} from "../pages/App/App";
 
 export const MainRoutes = (props) => {

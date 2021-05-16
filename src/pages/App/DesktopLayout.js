@@ -1,81 +1,167 @@
 import React from "react";
-import { Layout, Menu, Breadcrumb, Input, Checkbox, Typography } from "antd";
-import {
-  FilterOutlined,
-  LaptopOutlined,
-  NotificationOutlined,
-} from "@ant-design/icons";
+import { Link } from "react-router-dom";
+import { Layout, Menu, Input, Row, Col, Badge, Breadcrumb } from "antd";
+import { IoMdNotificationsOutline } from "react-icons/io";
+import { BiHelpCircle } from "react-icons/bi";
+import { ShoppingCartOutlined } from "@ant-design/icons";
 import { AppRoute } from "../../routes/app";
-import './DekstopLayout.css';
+import "./DekstopLayout.css";
 
-const { SubMenu } = Menu;
-const { Header, Content, Sider } = Layout;
-const {Text} = Typography;
+const { Search } = Input;
+const { Header, Content } = Layout;
+
+const onSearch = (value) => console.log(value);
+
 export const DekstopLayout = () => {
   return (
     <Layout>
-      <Header className="header" style={{backgroundColor: "#db0000"}}>
-        <div className="logo">Market Place</div>
-        <div style={{display: "flex", flexDirection: "row", justifyContent: "flex-end", fontSize: "15px"}}>
-          <Menu className="menu-list" theme="light" mode="horizontal" defaultSelectedKeys={["2"]} style={{color: "white"}}>
-            <Menu.Item key="1">Beranda</Menu.Item>
-            <Menu.Item key="2">Merchant</Menu.Item>
-            <Menu.Item key="3">List Produk</Menu.Item>
-          </Menu>
-        </div>
-      </Header>
-      <Layout>
-        <Sider width={250} className="sider" theme="light" style={{backgroundColor: "#e3e8ee"}}>
+      <Row
+        className="header"
+        style={{
+          backgroundColor: "#db0000",
+          display: "flex",
+          flexDirection: "row",
+          justifyContent: "space-evenly",
+        }}
+      >
+        <Col
+          span={12}
+          style={{
+            color: "white",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-start",
+          }}
+        >
           <Menu
-            mode="inline"
-            defaultSelectedKeys={["1"]}
-            defaultOpenKeys={["sub1", "sub2", "sub3"]}
-            style={{
-              height: '100%',
-              borderRight: 0,
-              marginTop: "20px"
-            }}
+            className="menu-list"
+            theme="light"
+            mode="horizontal"
+            defaultSelectedKeys={["2"]}
+            style={{ color: "white", border: "none" }}
           >
-            <SubMenu key="sub1" icon={<FilterOutlined style={{fontSize: "16px"}} />} title="Filter" style={{fontSize: "16px", backgroundColor: "#e3e8ee"}}>
-              <Menu.Item key="1" style={{color: "#000"}}>Lokasi</Menu.Item>
-              <Menu.Item key="2"><Checkbox>Jabodetabek</Checkbox></Menu.Item>
-              <Menu.Item key="3"><Checkbox>DKI Jakarta</Checkbox></Menu.Item>
-              <Menu.Item key="4"><Checkbox>Jawa Timur</Checkbox></Menu.Item>
-              <Menu.Item key="5"><Checkbox>Jawa Barat</Checkbox></Menu.Item>
-            </SubMenu>
-            <hr style={{width: "80%", marginTop: "1rem", marginBottom: "1rem"}}/>
-            <Menu style={{marginLeft: "1.3rem"}}>
-              <Menu.Item key="1" style={{color: "#000"}}>Metode Pembayaran</Menu.Item>
-              <Menu.Item key="1"><Checkbox>COD (Bayar di Tempat)</Checkbox></Menu.Item>
-            </Menu>
-            <hr style={{width: "80%", marginTop: "1rem", marginBottom: "1rem"}}/>
-            <Menu style={{marginLeft: "1.3rem"}}>
-              <Menu.Item key="1" style={{color: "#000"}}>Berdasarkan Kategori</Menu.Item>
-              <Menu.Item key="2"><Checkbox>Laptop Konsumer</Checkbox></Menu.Item>
-              <Menu.Item key="3"><Checkbox>Monitor</Checkbox></Menu.Item>
-              <Menu.Item key="4"><Checkbox>Keyboard</Checkbox></Menu.Item>
-              <Menu.Item key="5"><Checkbox>Tshirt</Checkbox></Menu.Item>
-            </Menu>
-            <hr style={{width: "80%", marginTop: "1rem", marginBottom: "1rem"}}/>
+            <Menu.Item key="1">Seller Center</Menu.Item>
+            <Menu.Item key="2">Mulai Jual</Menu.Item>
+            <Menu.Item key="3">Download</Menu.Item>
+            <Menu.Item key="4">Ikuti Kami</Menu.Item>
           </Menu>
-        </Sider>
-        <Layout style={{ padding: "0 24px 24px" }}>
-          <Breadcrumb style={{ margin: "16px 0" }}>
-            <Breadcrumb.Item>Home</Breadcrumb.Item>
-            <Breadcrumb.Item>List</Breadcrumb.Item>
-            <Breadcrumb.Item>App</Breadcrumb.Item>
-          </Breadcrumb>
-          <Content
-            className="site-layout-background"
+        </Col>
+        <Col
+          span={12}
+          style={{
+            color: "white",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Menu
+            className="menu-list"
+            theme="light"
+            mode="horizontal"
+            defaultSelectedKeys={["2"]}
+            style={{ color: "white", border: "none" }}
+          >
+            <Menu.Item key="1">
+              <IoMdNotificationsOutline style={{ fontSize: "1rem" }} />
+              Notifikasi
+            </Menu.Item>
+            <Menu.Item key="2">
+              <BiHelpCircle style={{ fontSize: "1rem" }} />
+              Bantuan
+            </Menu.Item>
+            <Menu.Item key="3">Login</Menu.Item>
+          </Menu>
+        </Col>
+      </Row>
+      <Header
+        className="header"
+        style={{
+          display: "flex",
+          flexDirection: "row",
+          backgroundColor: "#db0000",
+          justifyContent: "space-between",
+        }}
+      >
+        <Link to={"/app/home"}>
+          <div
+            className="logo"
             style={{
-              padding: 24,
-              margin: 0,
-              minHeight: 280,
+              fontFamily: "Anton",
+              border: "2px solid",
+              display: "flex",
+              alignItems: "center",
+              height: "3rem",
+              marginTop: "0.5rem",
+              backgroundColor: "brown",
+              paddingLeft: "1rem",
+              paddingRight: "1rem",
             }}
           >
-            <AppRoute/>
-          </Content>
-        </Layout>
+            Market Place
+          </div>
+        </Link>
+        <div
+          style={{
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            fontSize: "15px",
+            width: "40rem",
+          }}
+        >
+          <Search
+            placeholder="Cari toko, produk, dan merek"
+            onSearch={onSearch}
+            enterButton
+            style={{ height: "2rem" }}
+          />
+        </div>
+        <Link
+          to={"/app/cart"}
+          style={{
+            marginRight: "5rem",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "flex-end",
+          }}
+        >
+          <Badge
+            count={100}
+            style={{ backgroundColor: "rgb(165 13 13)", border: "none" }}
+          >
+            <ShoppingCartOutlined
+              style={{
+                color: "white",
+                fontSize: "2.5rem",
+              }}
+            />
+          </Badge>
+        </Link>
+      </Header>
+
+      <Breadcrumb style={{marginTop: "1.5rem", marginLeft: "2rem"}}>
+        <Breadcrumb.Item>Home</Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href={"/app/detail"}>Detail Produk</a>
+        </Breadcrumb.Item>
+        <Breadcrumb.Item>
+          <a href={"/app/detail"}>Produk</a>
+        </Breadcrumb.Item>
+      </Breadcrumb>
+
+      <Layout style={{ padding: "0 24px 24px" }}>
+        <Content
+          className="site-layout-background"
+          style={{
+            padding: 24,
+            margin: 0,
+            minHeight: 280,
+          }}
+        >
+          <AppRoute />
+        </Content>
       </Layout>
     </Layout>
   );

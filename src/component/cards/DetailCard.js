@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 import {
   Row,
   Col,
@@ -11,7 +12,6 @@ import {
   Menu,
   Button,
 } from "antd";
-import "./DetailCard.css";
 import ori from "../../component/image/ori.png";
 import instagram from "../../component/image/instagram.png";
 import youtube from "../../component/image/youtube.png";
@@ -541,22 +541,45 @@ export const DetailCard = (props) => {
         marginTop: "1rem"
       }}>
         <Card style={{display: "flex", alignItems: "center",width: "100%", backgroundColor: "#fafafa", border: "none"}}>
-          <h2 style={{margin: 0}}>Spesifikasi Produk</h2>
+          <h2 style={{margin: 0, fontFamily: "Anton"}}>Spesifikasi Produk</h2>
         </Card>
 
-        <Row style={{marginLeft: "2rem"}}>
+        <Row style={{marginLeft: "2rem", fontSize: "14px"}}>
           <div style={{marginTop: "1rem", display: "flex", flexDirection: "row"}}>
             <Col style={{display: "flex", flexDirection: "column"}}>
-              <h3 style={{color: "#8c8c8c"}}>Kategori</h3>
-              <h3 style={{color: "#8c8c8c"}}>Merek</h3>
-              <h3 style={{color: "#8c8c8c"}}>Model</h3>
-              <h3 style={{color: "#8c8c8c"}}>Kapasitas</h3>
+              <Text style={{color: "#8c8c8c"}}>Kategori</Text>
+              <Text style={{color: "#8c8c8c"}}>Merek</Text>
+              <Text style={{color: "#8c8c8c"}}>Model</Text>
+              <Text style={{color: "#8c8c8c"}}>Kapasitas</Text>
             </Col>
             <Col style={{display: "flex", flexDirection: "column", marginLeft: "3rem"}}>
-              <h3 style={{color: "blue"}}>Market - Sepatu</h3>
-              <h3>Nike Air Jordan</h3>
-              <h3>KQ2134</h3>
-              <h3>43</h3>
+              <Link><Text style={{color: "blue"}}>Market - Sepatu</Text></Link>
+              <Text>Nike Air Jordan</Text>
+              <Text>KQ2134</Text>
+              <Text>43</Text>
+            </Col>
+          </div>
+        </Row>
+
+        <Card style={{display: "flex", alignItems: "center",width: "100%", backgroundColor: "#fafafa", border: "none", marginTop: "3rem"}}>
+          <h2 style={{margin: 0, fontFamily: "Anton"}}>Deskripsi Produk</h2>
+        </Card>
+
+        <Row style={{marginLeft: "2rem", fontSize: "14px"}}>
+          <div style={{marginTop: "1rem", display: "flex", flexDirection: "row"}}>
+            <Col style={{display: "flex", flexDirection: "column"}}>
+              <ul>
+                <li>Hanya menjual kualitas terbaik</li>
+                <li>Real picture 100%</li>
+                <li>Kualitas premium quality original / kualitas terbaik</li>
+                <li>Sudah termasuk box dan paperbag</li>
+                <li>Apabila barang tidak sesuai dengan foto boleh di retur </li>
+              </ul>
+              <Text>Note :</Text>
+              <ul>
+                <li>Welcome Reseller</li>
+                <li>Harap tanyakan stok dulu sebelum order</li>
+              </ul>
             </Col>
           </div>
         </Row>

@@ -48,6 +48,24 @@ export const CardList = () => {
       terjual: "2RB Terjual",
       value: 4.5,
     },
+    {
+      key: 5,
+      img: apple,
+      title: "Macbook 2016",
+      harga: "Rp. 20.000",
+      kota: "Jakarta Pusat",
+      terjual: "2RB Terjual",
+      value: 4.5,
+    },
+    {
+      key: 6,
+      img: apple,
+      title: "Nike K21",
+      harga: "Rp. 500.000",
+      kota: "Jakarta Pusat",
+      terjual: "4.5RB Terjual",
+      value: 5,
+    },
   ];
   return (
     <div
@@ -63,7 +81,7 @@ export const CardList = () => {
           <Link to={"/app/detail"}>
             <Card
               hoverable
-              style={{ width: 240, margin: "5px" }}
+              style={{ width: 292, margin: "5px"}}
               cover={
                 <img className="card-image" alt="example" src={card.img} />
               }
